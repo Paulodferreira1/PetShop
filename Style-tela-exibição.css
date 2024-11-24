@@ -1,0 +1,12 @@
+
+.Exibir-tela{ /*Classe da tela de cadastro*/
+   margin-bottom: 810px; /*Mover margem para cima*/
+   display: flex; 
+   
+   margin-left: 40px; /*Mover para a direita(é ao contrário)*/
+   border-radius: 30px; /*Arredondar caixa de cadastro*/
+   justify-content: space-between;
+   
+}
+
+

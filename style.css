@@ -1,26 +1,12 @@
+body{
+    background-color: aquamarine;
+}
 
-.cabecalho ul{
-    display: flex;
+ul {display: flex;
     justify-content: space-between;
-    align-items: center;
     list-style-type: none;
-    font-size: 20px;
-    font-weight: bold;
-}
-.foto_cachorro{
-    display: flex;
-    justify-content: center;
     align-items: center;
-}
-.foto_cachorro img{
-    height: 500px;
-    width: 1500px;
-}
-#produtos{
-    text-align: center;
-}
-#produtos .foto_ração img{
-    height: 500px;
-
-}
+    padding: 17px;
+    nav-left: current;} /* Centralizar Navy Bar */
+ 
 
