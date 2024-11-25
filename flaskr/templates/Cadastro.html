@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <Link rel="stylesheet" href="{{url_for('static', filename='Style_cadastro.css') }}"> <!--Conectar a tela de cadastro com o CSS-->
+    <Link rel="stylesheet" href="{{url_for('static',filename='Style-tela-exibição.css') }}"> <!--Conectar a tela de cadastro com o CSS-->    
+    <title>Cadastro</title>
+</head>
+
+<body>
+    <div class="Tela-de-cadastro">
+        <div class="Exibir-tela">
+            <a class="exibir" aria-current="page" href="{{url_for('exibir')}}">Exibir</a> <!--DIV Nav Bar para tela de exbição-->
+        
+       
+            <a class="menu" aria-current="page" href="{{url_for('index')}}">Menu</a> <!--DIV Nav Bar para tela de exbição-->  
+        </div>
+        <!-------------------------------------->
+        
+          <!-------------------------------------->
+
+          
+
+          <!-------------------------------------->
+      
+        <div class="Cadastro-esquerdo"> <!--DIV Cadastro esquerdo-->
+            <h1>Faça o Cadastro do PET</h1> <!--Exibe o enunciado da página-->
+            <img src="{{url_for('static',filename='img/Gato-Cachorro.png')}}" class="Cadastro-esquerdo-imagem" alt="Tela-inicial"> <!--Imagem de tela inicial-->
+
+              <!-------------------------------------->
+            
+        </div>
+        <form class="Cadastro-direito" action="/submit" method="post"> <!--DIV Cadastro direito-->
+            <div class="Card-cadastro">
+                <h1>Cadastre aqui:</h1> <!--Título acima da tela de cadastro-->
+                <!---------------------->
+
+                <div class="Inserir-texto"> <!--Caixa de "Espécie"-->
+                    <label for="Espécie">Espécie</label> <!--Comando para Habilitar caixa de inserir infomações-->
+                    <input type="text" name="Espécie" placeholder="Espécie"> <!--Comando Caixa de infomações de cadastro-->
+                </div> <!--Termina: Caixa de "Espécie"-->
+                <!----------------->
+
+                <div class="Inserir-texto"> <!--Caixa de "Raça"-->
+                    <label for="Espécie">Raça</label> <!--Comando para Habilitar caixa de inserir infomações-->
+                    <input type="text" name="Raça" placeholder="Raça"> <!--Comando Caixa de infomações de cadastro-->
+                </div> <!--Termina: Caixa de "Raça"-->
+                  <!----------------->
+
+                <div class="Inserir-texto"> <!--Caixa de "Cor"-->
+                    <label for="Espécie">Cor</label> <!--Comando para Habilitar caixa de inserir infomações-->
+                    <input type="text" name="Cor" placeholder="Cor"> <!--Comando Caixa de infomações de cadastro-->
+                </div> <!--Termina: Caixa de "Cor"-->
+                  <!----------------->
+                  <button class="btn-Finalizar-Cadastro" type="submit">Finalizar Cadastro</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
