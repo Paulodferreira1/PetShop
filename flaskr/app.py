@@ -57,6 +57,8 @@ def index():
 def cadastro():
     # Renderiza o arquivo 'Cadastro.html' localizado na pasta 'templates/'
     return render_template('Cadastro.html')
+from sqlalchemy import text
+
 @app.route('/excluir/<int:id>', methods=['GET'])
 def excluir(id):
     pet = petz.query.get(id)  # Encontra o pet pelo ID
@@ -64,13 +66,17 @@ def excluir(id):
     if pet:
         db.session.delete(pet)  # Remove o pet
         db.session.commit()
-        db.session.execute("ALTER SEQUENCE petz_id_seq RESTART WITH 1")
+        
+        # Reinicia a sequência de IDs para começar do 1
+        db.session.execute(text("ALTER SEQUENCE petz_id_seq RESTART WITH 1"))
         db.session.commit()  # Commit da transação para o banco de dados
+        
         flash("Pet excluído com sucesso!", "success")
     else:
         flash("Pet não encontrado.", "error")
 
     return redirect('/exibir')
+
 #@app.route('/editar/<int:id>', methods=['GET', 'POST'])
 def editar(id):
     pet = petz.query.get_or_404(id)  # Encontra o pet pelo ID
