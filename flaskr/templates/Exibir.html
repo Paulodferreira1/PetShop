@@ -6,10 +6,9 @@
     <title>Exibir</title>
 </head>
 <body>
-    <ul>
+    <h1>Pets cadastrados:</h1><ol>
         {% for pet in pets %}
             <li>{{ pet.especie }} - {{ pet.raca }} - {{ pet.cor }} - {{pet.id}} </li>
-        {% endfor %}
-    </ul>
+        {% endfor %}</ol>
 </body>
 </html>

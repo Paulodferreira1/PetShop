@@ -170,12 +170,26 @@ body*{ /*Faz que todos os elementos to c´´odgo sigam esse padrão(mídias resp
 .menu {
     position: absolute;
     top: 10px; /* Suba o menu ajustando esse valor */
-    left: 50px; /* Ajuste conforme necessário */
+    left: 75px; /* Ajuste conforme necessário */
+    border-radius: 50%;
 }
 .exibir {
     position: absolute;
     top: 10px; /* Suba o menu ajustando esse valor */
     left: 10px; /* Ajuste conforme necessário */
+}
+a {
+    text-decoration: none; /* Remove o sublinhado */
+    color: inherit;        /* Remove a cor padrão do link e herda a cor do elemento pai */
+    background: none;      /* Remove qualquer fundo */
+    border: none;          /* Remove bordas, caso aplicadas */
+}
+a{
+    color: rgb(49, 0, 95);
+    font-size: 17pt;
+    align-items: center;
+    justify-content: space-between;
+
 }
 
 
