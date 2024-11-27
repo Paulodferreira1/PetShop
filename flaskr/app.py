@@ -78,22 +78,6 @@ def excluir(id):
 
     return redirect('/exibir')
 
-@app.route('/editar/<int:id>', methods=['GET', 'POST'])
-def editar(id):
-    pet = petz.query.get_or_404(id)  # Encontra o pet pelo ID
-    
-    if request.method == 'POST':
-        # Atualiza os dados com os valores do formulário
-        pet.especie = request.form['Espécie']
-        pet.raca = request.form['Raça']
-        pet.cor = request.form['Cor']
-        
-        db.session.commit()  # Comita as alterações no banco de dados
-
-        flash('Pet atualizado com sucesso!', 'success')  # Mensagem de sucesso
-        return redirect(url_for('exibir'))  # Redireciona para a lista de pets
-
-
 # Rota para exibir os animais cadastrados no banco de dados
 @app.route('/exibir')
 def exibir():
