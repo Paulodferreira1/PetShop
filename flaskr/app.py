@@ -88,7 +88,6 @@ def submit():
     cor = request.form.get('Cor')
     if not especie or not raca or not cor:
         flash("Todos os campos são obrigatórios.", "error")
-        return redirect('/cadastro')
     # Cria uma nova instância de 'petz' com os dados do formulário
     new_pet = petz(especie=especie, raca=raca, cor=cor)
     # Adiciona o novo pet à sessão do banco de dados
