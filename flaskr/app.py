@@ -63,6 +63,7 @@ def excluir(id):
 
     if pet:
         db.session.delete(pet)  # Remove o pet
+        db.session.execute("ALTER SEQUENCE pet_id_seq RESTART WITH 1")
         db.session.commit()  # Commit da transação para o banco de dados
         flash("Pet excluído com sucesso!", "success")
     else:
