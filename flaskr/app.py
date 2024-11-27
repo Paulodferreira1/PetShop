@@ -105,5 +105,6 @@ def get_pets():
 
 # Inicia o servidor Flask, permitindo a execução do aplicativo web
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=5000)
+
     
