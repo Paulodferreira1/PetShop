@@ -83,8 +83,6 @@ def editar(id):
 
         flash('Pet atualizado com sucesso!', 'success')  # Mensagem de sucesso
         return redirect(url_for('exibir'))  # Redireciona para a lista de pets
-    
-    return render_template('editar_pet.html', pet=pet)
 
 
 # Rota para exibir os animais cadastrados no banco de dados
