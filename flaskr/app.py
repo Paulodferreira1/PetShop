@@ -78,7 +78,7 @@ def excluir(id):
 
     return redirect('/exibir')
 
-#@app.route('/editar/<int:id>', methods=['GET', 'POST'])
+@app.route('/editar/<int:id>', methods=['GET', 'POST'])
 def editar(id):
     pet = petz.query.get_or_404(id)  # Encontra o pet pelo ID
     
