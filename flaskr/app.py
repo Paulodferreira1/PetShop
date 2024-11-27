@@ -59,7 +59,7 @@ def cadastro():
     return render_template('Cadastro.html')
 @app.route('/excluir/<int:id>', methods=['GET'])
 def excluir(id):
-    pet = Pet.query.get(id)  # Encontra o pet pelo ID
+    pet = petz.query.get(id)  # Encontra o pet pelo ID
 
     if pet:
         db.session.delete(pet)  # Remove o pet
