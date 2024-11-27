@@ -10,7 +10,8 @@ app = Flask(__name__)
 
 # Configuração do banco de dados SQLite
 # Define o caminho para o banco de dados, nesse caso, o banco será criado no arquivo 'pets.db'
-app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('DATABASE_URL', 'postgresql://petshop_db_cr0t_user:D6vXThnqLThMtSgZ4SQJtzv7gAibBOHg@dpg-ct3kgk68ii6s73d77pj0-a:5432/petshop.db')
+app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('DATABASE_URL')
+
 
 # Desativa o rastreamento de modificações no banco de dados (pode aumentar o desempenho)
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False  
