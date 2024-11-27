@@ -57,6 +57,18 @@ def index():
 def cadastro():
     # Renderiza o arquivo 'Cadastro.html' localizado na pasta 'templates/'
     return render_template('Cadastro.html')
+@app.route('/excluir/<int:id>', methods=['GET'])
+def excluir(id):
+    pet = Pet.query.get(id)  # Encontra o pet pelo ID
+
+    if pet:
+        db.session.delete(pet)  # Remove o pet
+        db.session.commit()  # Commit da transação para o banco de dados
+        flash("Pet excluído com sucesso!", "success")
+    else:
+        flash("Pet não encontrado.", "error")
+
+    return redirect('/exibir')
 
 # Rota para exibir os animais cadastrados no banco de dados
 @app.route('/exibir')

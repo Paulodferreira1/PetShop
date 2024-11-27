@@ -1,14 +1,45 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exibir</title>
+    <title>Exibir Pets</title>
 </head>
 <body>
-    <h1>Pets cadastrados:</h1><ol>
-        {% for pet in pets %}
-            <li>{{ pet.especie }} - {{ pet.raca }} - {{ pet.cor }} - {{pet.id}} </li>
-        {% endfor %}</ol>
+    <h1>Lista de Pets</h1>
+    
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            <ul>
+            {% for category, message in messages %}
+                <li class="{{ category }}">{{ message }}</li>
+            {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+    
+    <table>
+        <thead>
+            <tr>
+                <th>Espécie</th>
+                <th>Raça</th>
+                <th>Cor</th>
+                <th>Ação</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for pet in pets %}
+            <tr>
+                <td>{{ pet.especie }}</td>
+                <td>{{ pet.raca }}</td>
+                <td>{{ pet.cor }}</td>
+                <td>
+                    <a href="{{ url_for('excluir', id=pet.id) }}">Excluir</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
 </body>
 </html>
