@@ -1,4 +1,4 @@
-from flask import Flask, render_template, url_for, jsonify, request, redirect
+from flask import Flask, flash, render_template, url_for, jsonify, request, redirect
 import requests
 from flask_sqlalchemy import SQLAlchemy
 import os
@@ -7,6 +7,7 @@ import os
 
 # Cria a instância da aplicação Flask
 app = Flask(__name__)
+app.secret_key = "some_secret_key"
 
 # Configuração do banco de dados SQLite
 # Define o caminho para o banco de dados, nesse caso, o banco será criado no arquivo 'pets.db'
@@ -85,6 +86,9 @@ def submit():
     especie = request.form.get('Espécie')
     raca = request.form.get('Raça')
     cor = request.form.get('Cor')
+    if not especie or not raca or not cor:
+        flash("Todos os campos são obrigatórios.", "error")
+        return redirect('/cadastro')
     # Cria uma nova instância de 'petz' com os dados do formulário
     new_pet = petz(especie=especie, raca=raca, cor=cor)
     # Adiciona o novo pet à sessão do banco de dados
