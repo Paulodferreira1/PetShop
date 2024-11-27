@@ -67,8 +67,9 @@ def excluir(id):
         db.session.delete(pet)  # Remove o pet
         db.session.commit()
         
-        # Reinicia a sequência de IDs para começar do 1
-        db.session.execute(text("ALTER SEQUENCE petz_id_seq RESTART WITH 1"))
+        max_id = db.session.execute('SELECT MAX(id) FROM petz').fetchone()[0]  # Obtém o maior id na tabela
+        next_id = max_id + 1 if max_id else 1  # Se não houver pets, reinicia com 1
+        db.session.execute(text(f"ALTER SEQUENCE petz_id_seq RESTART WITH {next_id}"))
         db.session.commit()  # Commit da transação para o banco de dados
         
         flash("Pet excluído com sucesso!", "success")
