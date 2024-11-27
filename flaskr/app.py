@@ -59,16 +59,37 @@ def cadastro():
     return render_template('Cadastro.html')
 @app.route('/excluir/<int:id>', methods=['GET'])
 def excluir(id):
-    pet = petz.query.get(id)  # Encontra o pet pelo ID
+    pets = petz.query.get(id)  # Encontra o pet pelo ID
 
-    if pet:
-        db.session.delete(pet)  # Remove o pet
+    if pets:
+        db.session.delete(pets)  # Remove o pet
         db.session.commit()  # Commit da transação para o banco de dados
         flash("Pet excluído com sucesso!", "success")
     else:
         flash("Pet não encontrado.", "error")
 
     return redirect('/exibir')
+@app.route('/atualizar/<int:id>', methods=['POST'])
+def atualizar(id):
+    # Encontra o pet pelo ID
+    pets = petz.query.get(id)
+
+    if pets:
+        # Atualiza os dados do pet com os dados do formulário
+        pets.especie = request.form['Espécie']
+        pets.raca = request.form['Raça']
+        pets.cor = request.form['Cor']
+        
+        # Comita as mudanças no banco de dados
+        db.session.commit()
+
+        # Mensagem de sucesso
+        flash("Pet atualizado com sucesso!", "success")
+        return redirect('/exibir')
+    else:
+        # Se o pet não for encontrado, exibe uma mensagem de erro
+        flash("Pet não encontrado.", "error")
+        return redirect('/exibir')
 
 # Rota para exibir os animais cadastrados no banco de dados
 @app.route('/exibir')
