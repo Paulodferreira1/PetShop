@@ -35,7 +35,7 @@
                 <td>{{ pet.raca }}</td>
                 <td>{{ pet.cor }}</td>
                 <td>
-                    <a href="{{ url_for('excluir', id=pets.id) }}">Excluir</a>
+                    <a href="{{ url_for('excluir', id=pet.id) }}">Excluir</a>
                 </td>
             </tr>
             {% endfor %}
@@ -53,7 +53,7 @@
         {% endif %}
     {% endwith %}
 
-    <form action="{{ url_for('atualizar', id=pets.id) }}" method="POST">
+    <form action="{{ url_for('atualizar', id=pet.id) }}" method="POST">
         <label for="especie">Espécie:</label>
         <input type="text" name="Espécie" id="especie" value="{{ pet.especie }}" required><br><br>
 

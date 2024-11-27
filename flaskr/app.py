@@ -59,10 +59,10 @@ def cadastro():
     return render_template('Cadastro.html')
 @app.route('/excluir/<int:id>', methods=['GET'])
 def excluir(id):
-    pets = petz.query.get(id)  # Encontra o pet pelo ID
+    pet = petz.query.get(id)  # Encontra o pet pelo ID
 
-    if pets:
-        db.session.delete(pets)  # Remove o pet
+    if pet:
+        db.session.delete(pet)  # Remove o pet
         db.session.commit()  # Commit da transação para o banco de dados
         flash("Pet excluído com sucesso!", "success")
     else:
@@ -72,13 +72,13 @@ def excluir(id):
 @app.route('/atualizar/<int:id>', methods=['POST'])
 def atualizar(id):
     # Encontra o pet pelo ID
-    pets = petz.query.get(id)
+    pet = petz.query.get(id)
 
-    if pets:
+    if pet:
         # Atualiza os dados do pet com os dados do formulário
-        pets.especie = request.form['Espécie']
-        pets.raca = request.form['Raça']
-        pets.cor = request.form['Cor']
+        pet.especie = request.form['Espécie']
+        pet.raca = request.form['Raça']
+        pet.cor = request.form['Cor']
         
         # Comita as mudanças no banco de dados
         db.session.commit()
@@ -95,22 +95,22 @@ def atualizar(id):
 @app.route('/exibir')
 def exibir():
     # Consulta todos os pets no banco de dados
-    pets = petz.query.all()
+    pet = petz.query.all()
     # Renderiza o arquivo 'Exibir.html' passando os pets como variável
-    return render_template('Exibir.html', pets=pets)
+    return render_template('Exibir.html', pets=pet)
 
 # Rota para adicionar um novo pet via POST
 @app.route('/pets', methods=['POST'])
-def add_pet():
+def adicionar_pet():
     # Obtém os dados enviados no corpo da requisição em formato JSON
-    new_pet = request.get_json()
+    novo_pet = request.get_json()
     # Cria uma instância do modelo petz com os dados recebidos
-    pet = petz(especie=new_pet['especie'], raca=new_pet['raca'], cor=new_pet['cor'])
+    pet = petz(especie=novo_pet['especie'], raca=novo_pet['raca'], cor=novo_pet['cor'])
     # Adiciona o novo pet à sessão do banco de dados
     db.session.add(pet)
     db.session.commit()  # Comita as mudanças no banco de dados
     # Retorna os dados do novo pet em formato JSON e o status de criação (201)
-    return jsonify(new_pet), 201
+    return jsonify(novo_pet), 201
 
 # Rota para processar o formulário de cadastro de um novo pet
 @app.route('/submit', methods=['POST'])
@@ -123,9 +123,9 @@ def submit():
         flash("Todos os campos são obrigatórios.", "error")
         return redirect('/exibir')
     # Cria uma nova instância de 'petz' com os dados do formulário
-    new_pet = petz(especie=especie, raca=raca, cor=cor)
+    novo_pet = petz(especie=especie, raca=raca, cor=cor)
     # Adiciona o novo pet à sessão do banco de dados
-    db.session.add(new_pet)
+    db.session.add(novo_pet)
     db.session.commit()  # Comita as mudanças no banco de dados
 
     # Redireciona o usuário para a página de exibição de pets
