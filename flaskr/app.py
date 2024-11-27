@@ -69,27 +69,23 @@ def excluir(id):
         flash("Pet não encontrado.", "error")
 
     return redirect('/exibir')
-@app.route('/atualizar/<int:id>', methods=['POST'])
-def atualizar(id):
-    # Encontra o pet pelo ID
-    pet = petz.query.get(id)
-
-    if pet:
-        # Atualiza os dados do pet com os dados do formulário
+@app.route('/editar/<int:id>', methods=['GET', 'POST'])
+def editar(id):
+    pet = petz.query.get_or_404(id)  # Encontra o pet pelo ID
+    
+    if request.method == 'POST':
+        # Atualiza os dados com os valores do formulário
         pet.especie = request.form['Espécie']
         pet.raca = request.form['Raça']
         pet.cor = request.form['Cor']
         
-        # Comita as mudanças no banco de dados
-        db.session.commit()
+        db.session.commit()  # Comita as alterações no banco de dados
 
-        # Mensagem de sucesso
-        flash("Pet atualizado com sucesso!", "success")
-        return redirect('/exibir')
-    else:
-        # Se o pet não for encontrado, exibe uma mensagem de erro
-        flash("Pet não encontrado.", "error")
-        return redirect('/exibir')
+        flash('Pet atualizado com sucesso!', 'success')  # Mensagem de sucesso
+        return redirect(url_for('exibir'))  # Redireciona para a lista de pets
+    
+    return render_template('editar_pet.html', pet=pet)
+
 
 # Rota para exibir os animais cadastrados no banco de dados
 @app.route('/exibir')
