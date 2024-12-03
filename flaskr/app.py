@@ -2,6 +2,7 @@ from flask import Flask, flash, render_template, url_for, jsonify, request, redi
 import requests
 from flask_sqlalchemy import SQLAlchemy
 import os
+from sqlalchemy import text
 
 # Importa o módulo pets para manipular dados relacionados aos pets (não está claro no contexto se é necessário)
 
@@ -57,7 +58,10 @@ def index():
 def cadastro():
     # Renderiza o arquivo 'Cadastro.html' localizado na pasta 'templates/'
     return render_template('Cadastro.html')
-from sqlalchemy import text
+@app.route('/produtos')
+def produtos():
+    return render_template('produtos.html')
+
 
 @app.route('/excluir/<int:id>', methods=['GET'])
 def excluir(id):
