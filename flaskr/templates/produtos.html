@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produtos Pet Shop</title>
+    <link rel="stylesheet" href="{{url_for('static',filename = 'style_produtos.css')}}">
+</head>
+
+<body>
+    <header>
+        <h1>Produtos!</h1>
+        <p>Confira nossos produtos exclusivos para o seu pet.</p>
+    </header>
+    <section id="produtos">
+
+    <div class="produto-card1">
+        <img src= "{{url_for('static',filename= 'img/shampoo-removebg-preview.png')}}" alt="Ração Premium">
+        <h3> Shampoo</h3>
+        <p>Der mais brilho e vida para seu pet.</p>
+        <span class="preco">R$ 49,90</span>
+       
+    </div>
+    <br>
+
+    <div class="produto-card2">
+        <img src="{{url_for('static',filename= 'img/racao_a-removebg-preview.png')}}" alt="Cama Luxo">
+        <h3>Cama Luxo</h3>
+        <p>Alimento completo e balanceado para seu pet.</p>
+        <span class="preco">R$ 110,90</span>
+   
+    </div>
+    <br>
+
+    <div class="produto-card3">
+        <img src="{{url_for('static',filename='img/racao_3-removebg-preview.png')}}" alt="Cama Luxo">
+        <h3>Ração Formula</h3>
+        <p>Ração especial para Golden.</p>
+        <span class="preco">R$ 89,90</span>
+   
+    </div>
+    <div class="produto-card4">
+        <img src="{{url_for('static',filename='img/pente-removebg-preview.png')}}" alt="Cama Luxo">
+        <h3>Escova Premium</h3>
+        <p>Escova de facil manoseio</p>
+        <span class="preco">R$ 29,99</span>
+       
+    </div>
+    <div class="produto-card5">
+        <img src="{{url_for('static',filename='img/bola-removebg-preview.png')}}" alt="Cama Luxo">
+        <h3>Bolinhas</h3>
+        <p> Brinquedo para descontrair seu pet.</p>
+        <span class="preco">R$ 19,99</span>
+       
+    </div>
+    <div class="produto-card6">
+        <img src="{{url_for('static',filename='img/cama-removebg-preview.png')}}" alt="Cama Luxo">
+        <h3>Cama Luxo</h3>
+        <p>Proporcione ao seu pet o máximo de conforto.</p>
+        <span class="preco">R$ 139,90</span>
+    
+    </div>
+
+    <br>
+
+    <div class="produto-card7">
+        <img src="{{url_for('static',filename='img/coleira_a-removebg-preview.png')}}" alt="Cama Luxo">
+        <h3>Coleira</h3>
+        <p> Coleira com espinhos.</p>
+        <span class="preco">R$ 45,99</span>
+       
+    </div>
+    </section>
+    <script src="scripts.js"></script>
+</body>
+
+</html>
