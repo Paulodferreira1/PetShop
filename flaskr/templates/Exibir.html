@@ -48,6 +48,7 @@
             <td>{{ pet.cor}}</td> <!--Itens que ficarão dentro da célula "COR"-->
             <td>"{{ url_for('excluir', id=pet.id)}}"</td> <!--Itens que ficarão dentro da célula "COR"-->
         </tr>
+        {% endfor %}
     </tbody>
     </table>
 </div>
