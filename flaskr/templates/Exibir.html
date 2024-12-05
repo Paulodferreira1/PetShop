@@ -1,48 +1,59 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exibir Pets</title>
+    <title>Tela de Exibição</title>
+    <Link rel="stylesheet" href="{{url_for('static',filename='Exibicao.css')}}"> <!--Conectar a tela de Exibição com o CSS "Exibição"-->
+<!--------------------------------------------------------------->    
+
 </head>
-<body>
-    <h1>Lista de Pets</h1>
-    
-    {% with messages = get_flashed_messages(with_categories=true) %}
-        {% if messages %}
+
+<body> 
+    <div class="Menus"> <!-----Criação da Nav bar------->
+        <nav>
             <ul>
-            {% for category, message in messages %}
-                <li class="{{ category }}">{{ message }}</li>
-            {% endfor %}
+                <li><a href="{{url_for('index')}}">Menu</a></li>
+                <li><a href="{{url_for('cadastro')}}">Cadastro</a></li>
             </ul>
-        {% endif %}
-    {% endwith %}
+            
+        </nav>
+
+    </div>
+<!--------------------------------------->
     
-    <table>
-        <thead>
-            <tr>
-                <th>Espécie</th>
-                <th>Raça</th>
-                <th>Cor</th>
-                <th>ID</th>
-                <th>Ação</th>
-                
-            </tr>
-        </thead>
-        <tbody>
-            {% for pet in pets %}
-            <tr>
-                <td>{{ pet.especie }}</td>
-                <td>{{ pet.raca }}</td>
-                <td>{{ pet.cor }}</td>
-                <td>{{pet.id}}</td>
-                <td>
-                    <a href="{{ url_for('excluir', id=pet.id) }}">Excluir</a>
-                </td>
-            </tr>
-            {% endfor %}
-        </tbody>
+<!-----Criação da tabela------->
+
+<div class="Tabela"> <!--Div que comanda toda a estrutura da tabela-->
+<div class="Células">
+    <table> 
+        <tr>
+            <th>ID</th>  <!--Células-->
+            <th>Espécie</th> <!--Células-->
+            <th>Raça</th>  <!--Células-->
+            <th>Cor</th>  <!--Células-->
+            <th>Ação</th>  <!--Células-->
+
+        </tr>
+
+<!--------------------------------------->
+
+<!--Criação dos itens que ficarão registrados dentro da tabela-->
+<tbody>
+    {% for pet in pets %}
+        <tr>
+            <td>{{ pet.id}}</td> <!--Itens que ficarão dentro da célula "ESPÉCIE"-->
+            <td>{{ pet.especie}}</td> <!--Itens que ficarão dentro da célula "RAÇA"-->
+            <td>{{ pet.raca}}</td> <!--Itens que ficarão dentro da célula "COR"-->
+            <td>{{ pet.cor}}</td> <!--Itens que ficarão dentro da célula "COR"-->
+            <td>"{{ url_for('excluir', id=pet.id)}}"</td> <!--Itens que ficarão dentro da célula "COR"-->
+        </tr>
+    </tbody>
     </table>
+</div>
+</div>
+
 </body>
+
+
 </html>

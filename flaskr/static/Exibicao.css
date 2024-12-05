@@ -1,0 +1,92 @@
+*{ /*Formatação dentro da tabela*/
+    margin: 12;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+}
+
+/*-----------------------------*/
+body{
+    background-color: rgb(255, 136, 39);
+}
+
+/*-----------------------------*/
+
+.Menus ul{ /*--corpo da NAV BAR --*/
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    position:relative;
+    
+   
+    
+
+}
+
+/*-----------------------------*/
+
+.Menus ul li{  /*--Posição --*/
+    list-style: none;
+    display: flex;
+    margin-right: 30px;
+    align-items: center;
+    margin: center;
+}
+
+.Menus ul li a{ /*--Estilização da Navy bar --*/
+    text-decoration: none;
+    padding: 0px 20px;
+    color: rgb(0, 0, 0); /* Cor das abas "Menu", "Reexibição", "Em cartaz" */
+    box-shadow: 0px 10px 40px; /* Efeito de brilho nas abas; "Menu", "Reexibição", "Em cartaz" */
+    background-color: blueviolet; /* Sombra dos botões */
+    border-radius: 20px;  /* Borda redonda */
+    font-size: 15px;
+    font-weight: 800; /*Deixa texto com mais espessura*/
+}
+
+
+/*-----------------------------*/
+.Células{
+    color: rgb(255, 145, 0); /*Cor do texto*/
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 50%;
+    background-color: rgb(53, 0, 102); /*Cor de fundo da tabela*/
+    padding: 2px 0;
+    border-radius: 5px; /*Efeito Borda Arredondada*/
+    -webkit-box-shadow: 3px 3px 3px 3px rgba(142, 0, 170, 0.77);
+    -moz-box-shadow: 3px 3px 3px 3px rgba(142, 0, 170, 0.77);
+    box-shadow: 3px 3px 3px 3px rgba(142, 0, 170, 0.77);
+}
+
+/*-----------------------------*/
+.Células table{
+    width: 100%;
+    max-width: 800px;
+    border-collapse: collapse;
+}
+
+/*-----------------------------*/
+.Células table tr th{
+    height: 56px;
+    color: rgb(255, 115, 0);
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: .25px; /*Espaçamento*/
+    text-align: left;
+    padding: 0 10px;
+}
+
+/*-----------------------------*/
+
+.Tabela{ /*Posição da tabela*/
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin-top: 8%;
+}
+
+/*-----------------------------*/
