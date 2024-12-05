@@ -10,23 +10,28 @@
 </head>
 
 <body>
-    <nav class="navbar col-12 position-fixed navbar-expand-lg navbar-light bg-light body-tertiary" style="z-index: 999;">
-        <div class="container-fluid col-11 m-auto">
-          <a class="navbar-brand" href="{{url_for('index')}}">PET SHOP</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+  <nav class="navbar navbar-expand-lg navbar-light" style="background-color: blueviolet; z-index: 999;">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">PET SHOP</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="{{url_for('exibir')}}">Exibir cadastro dos pets</a>
-              </li>
-              <a class="nav-link active" aria-current="page" href="{{ url_for('cadastro') }}">Cadastro</a> <!--Conexão com o site e tela de cadasstro-->
-              </li> <!--Tela de realização de cadastro-->             
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="{{url_for('exibir')}}">Exibir cadastro dos pets</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="{{ url_for('cadastro') }}">Cadastro</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{url_for('produtos')}}">Produtos</a>
+                </li>
             </ul>
-          </div>
         </div>
-      </nav>
+    </div>
+</nav>
+
 
     <header>
         <h1>Produtos!</h1>
