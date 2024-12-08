@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Pontano+Sans:wght@700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap'); /* Adcionar fonte */
+
+
+/*Padding "*" Contendo todos os elementos da página */
+*{ 
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Poppins; 
+
+} 
+/*--------------------------- */
+
+/*---fundo------- */
+body{
+    background-color: rgb(255, 152, 17); /*Imagem de fundo */
+    background-position: center;
+    background-repeat: no-repeat; /*Faz a imagem não repetir */
+    background-size: cover;  /*Faz a imagem ocupar toda a tela */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    min-height: 100vh;
+}
+
+/*--------------------------- */
+.w50{
+    width: 50%;
+    float: left;
+    padding-right: 15px;
+}
+
+/*--------------------------- */
+
+/*Editar calsse BOX - "Corresponde ao formulário" */
+.box{
+    display: flex;
+    width: 930px;
+
+}
+/*--------------------------- */
+
+/*Editar imagem " Cachorro e gato */
+.img-box{
+    background-color: rgb(255, 152, 17);
+    width: 50%;
+    display: flex;
+    padding: 20px;
+    border-radius: 20px 0 0 20px;
+}
+/*--------------------------- */
+
+/*Editar imagem " Cachorro e gato */
+.img-box img{
+    width: 100%;
+}
+/*--------------------------- */
+
+/*Editar formulário */
+.form-box{
+    background-color: rgb(255, 152, 17);
+    backdrop-filter: blur(40px);
+    padding: 30px 40px;
+    width: 50%;
+    border-radius: 0 20px 0;
+}
+/*--------------------------- */
+
+/*TAMANHO DO TEXTO */
+.form-box h2{
+    font-size: 30px;
+
+}
+/*--------------------------- */
+
+.form-box form{
+    margin: 20px 0;
+}
+
+/*--------------------------- */
+form .input-group{
+    margin-bottom: 15px;
+}
+
+/*--------------------------- */
+form .input-group label{
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+
+}
+
+/*--------------------------- */
+
+/*Estilizar Imputs's */
+form .input-group input{
+    width: 100%;
+    height: 47px;
+    border-radius: 20px; /*Borda arrendondada */
+    outline: none;
+    border: 2px solid transparent;
+    padding: 15px;
+    font-size: 15px;
+    transition: all 0.4s ease;
+}
+/*--------------------------- */
+
+form .input-group input:focus{
+    border-color: purple; /*Deixa bora com cotorno roxo ao ser selecionada */
+
+}
+
+/*--------------------------- */
+/*Editar botão */
+form .input-group button{
+    width: 100%;
+    height: 40px;
+    background-color: purple; /*--Cor do botão--- */
+    border-radius: 20px;
+    outline: none;
+    border: none;
+    margin-top: 15px;
+    color: rgb(255, 187, 0); /*--Cor do texto do botão--- */
+    font-size: 16px;
+}
+
+/*--------------------------- */
+/*Mídia responsiva */
+@media (max-width:930px) {
+    .img-box{
+        display: none;
+    }
+    .box{
+        width: 700px;
+    }
+    .form-box{
+        width: 100%;
+        border-radius: 20px;
+    }
+}
+
+@media (max-width:500px){
+    .w50{
+        width: 100%;
+        padding: 0;
+    }
+}
+
+/*--------------------------- */
