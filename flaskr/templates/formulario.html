@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>formulário</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='formulario.css')}}"> <!--Lincar com o CSS-->
+</head>
+<body>
+    <div class="box">
+        <div class="img-box">
+            <img src="{{url_for('static',filename='img/CAHORRO_GATO.png')}}"> <!--Inserção do CSS-->
+    </div>
+    
+    <div class="form-box">
+        <h2>Fale conosco!</h2> <!--Descrição do formulário-->
+        <p> Tire suas dúvidas e deixe sugestões aqui.</p> <!--Subtítulo do formulário-->
+    </div>    
+
+        <!--------------------Criação do formulário----------------------->
+        <form action="#">
+            <div class="input-group">  <!--Div do formulário-->
+                <label for="nome">Nome completo</label> <!--Criação da caixa para digitar o nome-->
+                <input type="text" id="nome" placeholder="Digite o seu nome completo" required> <!--Texto que é exibido dentro da caixa --"required torna o campo obrigatório de se preeencher"-->
+    
+            </div> 
+
+            <!------------------------------------------->
+
+            <div class="input-group">  <!--Div do formulário-->
+                <label for="email">E-mail</label> <!--Criação da caixa para digitar o EMAIL-->
+                <input type="email" id="email" placeholder="Digite o seu E-mail" required> <!--Texto que é exibido dentro da caixa --"required torna o campo obrigatório de se preeencher"-->
+    
+            </div> 
+
+            <!------------------------------------------->
+            <div class="input-group">  <!--Div do formulário-->
+                <label for="telefone">Telefone</label> <!--Criação da caixa para digitar o Telefone-->
+                <input type="tel" id="telefone" placeholder="Digite o seu telefone" required> <!--Texto que é exibido dentro da caixa --"required torna o campo obrigatório de se preeencher"-->
+    
+            </div> 
+            <!------------------------------------------->
+            <div class="input-group">  <!--Div do formulário-->
+                <label for="sugestao">Sugestão</label> <!--Criação da caixa para digitar sugestões-->
+                <input type="sugestão" id="Sugestão" placeholder="Digite o sua sugestão" required> <!--Texto que é exibido dentro da caixa --"required torna o campo obrigatório de se preeencher"-->
+    
+            </div> 
+            <!------------------------------------------->
+
+            <!-------------------Criação do botçao "Enviar------------------------>
+
+            <div class="input-group">
+                <button>Enviar</button>
+            </div>
+
+            <!------------------------------------------->
+
+
+       
+   
+
+        </form>
+    </div>
+    
+</body>
+</html>

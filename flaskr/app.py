@@ -64,6 +64,9 @@ def produtos():
 @app.route('/historiaemissao')
 def historiaemissao():
     return render_template('historia_e_missao.html')
+@app.route('/suguestao')
+def sugestao():
+    return render_template('formulario.html')
 
 
 @app.route('/excluir/<int:id>', methods=['GET'])
