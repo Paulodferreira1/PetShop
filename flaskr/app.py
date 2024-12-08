@@ -61,6 +61,9 @@ def cadastro():
 @app.route('/produtos')
 def produtos():
     return render_template('produtos.html')
+@app.route('/historiaemissao')
+def historiaemissao():
+    return render_template('historia_e_missao.html')
 
 
 @app.route('/excluir/<int:id>', methods=['GET'])
