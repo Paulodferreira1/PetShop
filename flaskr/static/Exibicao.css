@@ -33,6 +33,16 @@ body{
     align-items: center;
     margin: center;
 }
+@media (max-width: 768px) {
+    .Menus ul { flex-direction: column; }
+
+} 
+
+.Menus ul li { 
+    margin-right: 0; margin-bottom: 10px; 
+    .Células { width: 100%; } 
+    .Células table { width: 100%; } 
+}
 
 .Menus ul li a{ /*--Estilização da Navy bar --*/
     text-decoration: none;
