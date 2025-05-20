@@ -12,7 +12,7 @@ app.secret_key = "some_secret_key"
 
 # Configuração do banco de dados SQLite
 # Define o caminho para o banco de dados, nesse caso, o banco será criado no arquivo 'pets.db'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://petshop_db_cr0t_user:D6vXThnqLThMtSgZ4SQJtzv7gAibBOHg@dpg-ct3kgk68ii6s73d77pj0-a:5432/petshop_db_cr0t'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://petshop_db_rzys_user:UbskWtYl5YzWLHIwXo3RoZkAH1fC67iK@dpg-d0lstcadbo4c73c8jje0-a/petshop_db_rzys'
 
 
 
